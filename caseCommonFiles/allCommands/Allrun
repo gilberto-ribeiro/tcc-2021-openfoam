@@ -1,0 +1,7 @@
+foamSetupCHT | tee log.foamSetupCHT
+renumberMesh -overwrite | tee log.renumberMesh
+decomposePar -allRegions -dict system/decomposeParDict | tee log.decomposePar
+mpirun -np 4 chtMultiRegionFoam -parallel | tee log.chtMultiRegionFoam
+reconstructPar -allRegions -newTimes | tee log.reconstructPar
+rm -r processor*
+paraFoam -touchAll

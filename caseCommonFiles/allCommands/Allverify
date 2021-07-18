@@ -1,0 +1,1 @@
+gedit README system/controlDict system/blockMeshDict constant/parameters constant/materialProperties templates/system/*/fvSchemes templates/system/*/fvSolution templates/0/*/*
