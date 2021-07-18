@@ -1,0 +1,46 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  8
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#include "$FOAM_CASE/constant/parameters"
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform $Tinfty;
+
+boundaryField
+{
+    cylinderBottom
+    {
+        type    fixedValue;
+        value   uniform $Tb;
+    }
+
+    cylinderTop
+    {
+        type    fixedValue;
+        value   uniform $Tinfty;
+    }
+
+    solid_to_fluid
+    {
+        type    compressible::turbulentTemperatureCoupledBaffleMixed;
+        value   $internalField;
+        kappa   kappa;
+        Tnbr    T;
+    }
+}
+
+// ************************************************************************* //

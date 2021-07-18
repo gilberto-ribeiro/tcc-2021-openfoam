@@ -1,0 +1,12 @@
+postProcess -func "grad(T)" -region solid -latestTime
+postProcess -func "fieldAverage(T)" -region solid -latestTime
+postProcess -func "fieldAverage(T)" -region fluid -latestTime
+chtMultiRegionFoam -postProcess -func "mag(U)" -region fluid -latestTime
+postProcess -func "components(U)" -region fluid -latestTime
+postProcess -func "minMaxMagnitude(U)" -region fluid -latestTime
+postProcess -func "minMaxComponents(U)" -region fluid -latestTime
+postProcess -func "fieldAverage(U)" -region fluid -latestTime
+postProcess -func vorticity -region fluid -latestTime
+postProcess -func transientProbes -region solid
+postProcess -func temperatureProfile -region solid -latestTime
+chtMultiRegionFoam -postProcess -func wallHeatFlux -region solid
