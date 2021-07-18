@@ -1,9 +1,0 @@
-cp file aluminum095Fin/aluminum095Fin_adiabatic/dict
-cp file aluminum095Fin/aluminum095Fin_convection/dict
-cp file aluminum095Fin/aluminum095Fin_infiniteFin/dict
-cp file steel095Fin/steel095Fin_adiabatic/dict
-cp file steel095Fin/steel095Fin_convection/dict
-cp file steel095Fin/steel095Fin_infiniteFin/dict
-cp file steel160Fin/steel160Fin_adiabatic/dict
-cp file steel160Fin/steel160Fin_convection/dict
-cp file steel160Fin/steel160Fin_infiniteFin/dict
